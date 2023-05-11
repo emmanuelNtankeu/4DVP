@@ -18,10 +18,6 @@ jobs:
           update: "all"
           package-ecosystem: "gomod"
           registry-url: "https://proxy.golang.org"
-  dependabot2:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
       - name: Dependabot pour Docker
         uses: dependabot/dependabot-core@stable
         with:

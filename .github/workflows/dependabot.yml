@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Dependabot pour Go
-        uses: dependabot/dependabot-core@stable
+        uses: dependabot/dependabot-core@v0.164.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           directory: "/"
@@ -19,7 +19,7 @@ jobs:
           package-ecosystem: "gomod"
           registry-url: "https://proxy.golang.org"
       - name: Dependabot pour Docker
-        uses: dependabot/dependabot-core@stable
+        uses: dependabot/dependabot-core@v0.164.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           directory: "/"

@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Dependabot
+      - name: Dependabot pour Go
         uses: dependabot/dependabot-core@stable
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Dependabot
+      - name: Dependabot pour Docker
         uses: dependabot/dependabot-core@stable
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

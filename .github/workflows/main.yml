@@ -1,0 +1,40 @@
+name: Code Analysis and Docker Analysis
+
+on:
+  pull_request:
+  push:
+  workflow_dispatch:  # Déclencheur pour l'exécution manuelle
+
+jobs:
+  static-analysis:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Static Analysis with Semgrep
+        run: semgrep .
+
+  docker-analysis:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Docker Analysis with Hadolint
+        run: hadolint Dockerfile
+
+  super-linter:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Super-Linter
+        uses: github/super-linter@v4
+        with:
+          flags: "--json"

@@ -13,8 +13,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Setup Semgrep
-        uses: returntocorp/setup-semgrep@v1
+      - name: Install Semgrep
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y semgrep
 
       - name: Static Analysis with Semgrep
         run: semgrep .

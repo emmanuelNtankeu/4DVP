@@ -25,7 +25,7 @@ jobs:
       - name: Construire et pousser l'image Docker
         uses: docker/build-push-action@v1
         with:
-          context: ./super_calculator
-          file: ./super_calculator/Dockerfile
+          context: ./4DVPProjet/super_calculator
+          file: ./4DVPProjet/super_calculator/Dockerfile
           push: true
           tags: lende/4dvp:latest

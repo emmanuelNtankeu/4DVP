@@ -20,4 +20,4 @@ jobs:
           docker run --rm -i hadolint/hadolint < ./super_calculator/Dockerfile
       - name: Analyse statitsique avec semgrep
         run: |
-          docker run --rm -i semgrep/semgrep < ./super_calculator/Dockerfile 
+          docker run --rm -v "$(pwd):/code" returntocorp/semgrep -f /code/super_calculator/Dockerfile

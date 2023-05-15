@@ -26,4 +26,6 @@ jobs:
         run: |
           semgrep --config p/python ./super_calculator/Dockerfile
       - name: Super-Linter
+        if: github.event_name == 'pull_request'
         uses: super-linter/super-linter@v5.0.0
+        

@@ -1,9 +1,9 @@
 name: Construire l'image Docker
 
 on:
-  push:
-    branches:
-      - main
+  create:
+    tags:
+       - '*'
   workflow_dispatch:
 
 jobs:

@@ -4,18 +4,18 @@ on:
   pull_request:
   push:
     branches:
-      -main
+      - main
   workflow_dispatch:
+
 jobs:
   analyse-code:
     runs-on: ubuntu-latest
-    
+
     steps:
-      - name: Verification du code
+      - name: Checkout du dépôt
         uses: actions/checkout@v2
 
-      - name: Analyse Dockerfile avec hadoint
+      - name: Analyse Dockerfile avec hadolint
         run: |
           docker pull hadolint/hadolint:latest || true
           docker run --rm -i hadolint/hadolint < ./super_calculator/Dockerfile
-         

@@ -25,4 +25,5 @@ jobs:
       - name: Analyse statistique de Semgrep
         run: |
           semgrep --config p/python ./super_calculator/Dockerfile
-        
+      - name: Super-Linter
+        uses: super-linter/super-linter@v5.0.0

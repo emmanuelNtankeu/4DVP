@@ -18,8 +18,5 @@ jobs:
       - name: Analyse Dockerfile avec hadolint
         run: |
           docker run --rm -i hadolint/hadolint < ./super_calculator/Dockerfile
-      - name: Analyse statitsique avec semgrep          
-        run: |
-            wget -O semgrep https://github.com/returntocorp/semgrep/releases/latest/download/semgrep-linux
-            chmod +x semgrep
-            ./semgrep --config=p/r2c-ci ./super_calculator/Dockerfile
+      - name: semgrep-action
+        uses: returntocorp/semgrep-action@v1

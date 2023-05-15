@@ -17,5 +17,5 @@ jobs:
 
       - name: Analyse Dockerfile avec hadolint
         run: |
-          docker pull hadolint/hadolint:latest || true
-          docker run --rm -i hadolint/hadolint < ./super_calculator/Dockerfile
+          docker pull hadolint/hadolint:v1.22.1 || true
+          docker run --rm -i hadolint/hadolint:v1.22.1 < ./super_calculator/Dockerfile

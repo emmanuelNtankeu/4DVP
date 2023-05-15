@@ -11,7 +11,7 @@ COPY . .
 
 RUN go build -o /calculator
 
-FROM gcr.io/distroless/base-debian10
+FROM gcr.io/distroless/base-debian10:v2
 
 WORKDIR /
 

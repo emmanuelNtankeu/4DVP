@@ -29,3 +29,11 @@ jobs:
           file: ./super_calculator/Dockerfile
           push: true
           tags: emmanuelntankeu/4dvp:latest
+          
+     
+  with:
+    context: ./super_calculator
+    file: ./super_calculator/Dockerfile
+    push: true
+    tags: emmanuelntankeu/4dvp:1.1.1
+

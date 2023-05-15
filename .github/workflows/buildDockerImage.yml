@@ -26,6 +26,6 @@ jobs:
       - name: Construire et pousser l'image Docker
         uses: docker/build-push-action@v1
         with:
-          context: .
+          context: ./super_calculator
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/4dvp:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/imageDocker:latest

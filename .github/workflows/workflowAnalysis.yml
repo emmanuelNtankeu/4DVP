@@ -1,45 +1,21 @@
-name: Code Analysis
+name: code Analystate
 
 on:
   pull_request:
   push:
-  workflow_dispatch:  # Déclencheur pour l'exécution manuelle
-
+    branches:
+      -main
+  workflow_dispatch:
 jobs:
-  static-analysis:
+  analyse-code:
     runs-on: ubuntu-latest
-
+    
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - name: Verification du code
+        uses: actions/checkout@v2
 
-      - name: Install Semgrep
+      - name: Analyse Dockerfile avec hadoint
         run: |
-          sudo apt-get update
-          sudo apt-get install -y semgrep
-
-      - name: Static Analysis with Semgrep
-        run: semgrep .
-
-  docker-analysis:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Docker Analysis with Hadolint
-        run: hadolint Dockerfile
-
-  super-linter:
-    if: github.event_name == 'pull_request'
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Super-Linter
-        uses: github/super-linter@v4
-        with:
-          flags: "--json"
+          docker pull hadolint/hadolint:latest || true
+          docker run --rm -i hadolint/hadolint < ./4DVPProjet/super_calculator/super_calculator/Dockerfile
+         

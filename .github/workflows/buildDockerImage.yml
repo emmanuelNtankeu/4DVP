@@ -24,4 +24,4 @@ jobs:
           content: ./super_calculator
           file: ./super_calculator/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/super_calculator
+          tags: ${{ secrets.DOCKER_USERNAME }}/calcul:latest

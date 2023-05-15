@@ -28,5 +28,5 @@ jobs:
           context: ./super_calculator
           file: ./super_calculator/Dockerfile
           push: true
-          tags: emmanuelntankeu/4dvp:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/4dvp:latest
    

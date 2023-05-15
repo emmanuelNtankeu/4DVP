@@ -24,7 +24,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Construire et pousser l'image Docker
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v1
         with:
           context: ./super_calculator
           file: ./super_calculator/Dockerfile

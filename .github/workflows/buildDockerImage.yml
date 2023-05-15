@@ -1,4 +1,5 @@
 name: Construire l'image Docker
+
 on:
   create:
     tags:
@@ -22,9 +23,6 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Construire et pousser l'image Docker
-        uses: docker/build-push-action@v2
-        with:
-          context: ./super_calculator
-          file: ./super_calculator/Dockerfile
-          push: true
-          tags: emmanuelntankeu/4dvp:latest
+        run: |
+          docker buildx build --platform linux/amd64 -t emmanuelntankeu/4dvp:latest ./super_calculator
+          docker push emmanuelntankeu/4dvp:latest

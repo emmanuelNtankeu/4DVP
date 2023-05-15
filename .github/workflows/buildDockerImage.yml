@@ -19,6 +19,9 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Construire et pousser l'image Docker
-        run: |
-          docker buildx build --platform linux/amd64 -t emmanuelntankeu/4dvp:latest ./super_calculator
-          docker push emmanuelntankeu/4dvp:latest
+        uses: docker/build-push-action@v1
+        with:
+          content: ./super_calculator
+          file: ./super_calculator/Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKER_USERNAME }}/super_calculator

@@ -4,6 +4,9 @@ on:
   create:
     tags:
        - '*'
+  push:
+    branches:
+    - main
   workflow_dispatch:
 
 jobs:

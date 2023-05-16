@@ -1,9 +1,6 @@
 name: Construire l'image Docker
 
 on:
-  create:
-    tags:
-       - '*'
   push:
     branches:
     - main

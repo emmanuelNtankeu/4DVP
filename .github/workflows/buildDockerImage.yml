@@ -29,5 +29,5 @@ jobs:
           context: ./super_calculator
           file: ./super_calculator/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/imageDocker:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/imagedocker:latest
 
